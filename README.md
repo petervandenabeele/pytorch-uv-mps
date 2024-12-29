@@ -37,7 +37,7 @@ uv python list | grep 'uv' | grep '3\.12\.8'
 # cpython-3.12.8-macos-aarch64-none                 /Users/peter_v/.local/share/uv/python/cpython-3.12.8-macos-aarch64-none/bin/python3.12
 ```
 
-## uv init with some fdev tools
+## uv init with some dev tools
 
 Initialize `uv` with default config:
 
