@@ -9,7 +9,7 @@ On Mac OS X with M1 chip.
 Brew install of uv.
 
 ```zsh
-brew update && brew upgrade && brew install uv && brew doctor && echo "SUCCESS :-)"
+brew update && brew upgrade && brew install uv && brew doctor && echo SUCCESS
 ```
 
 Make sure Xcode is installed.
@@ -37,6 +37,8 @@ uv python list | grep 'uv' | grep '3\.12\.8'
 # cpython-3.12.8-macos-aarch64-none                 /Users/peter_v/.local/share/uv/python/cpython-3.12.8-macos-aarch64-none/bin/python3.12
 ```
 
+## uv init with some fdev tools
+
 Initialize `uv` with default config:
 
 ```zsh
@@ -58,4 +60,17 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12.8"
 dependencies = []
+```
+
+Add flake8 and black
+
+```zsh
+uv add flake8 black --dev
+```
+
+Now we can run flake8 and black on the `/code` dir
+(besides running automatically in the IDE).
+
+```zsh
+uv run black code && uv run flake8 code && echo SUCCESS
 ```
