@@ -74,3 +74,35 @@ Now we can run flake8 and black on the `/code` dir
 ```zsh
 uv run black code && uv run flake8 code && echo SUCCESS
 ```
+
+## Add torch and torchvision for different platform
+
+For now (since only doing this for Mac ARM architecture), I am forcing `cpu` versions
+for all architectures. Turns out that on Mac, the `+cpu` extension on the package name
+is not needed when downloading wheels (presumable because there are no other extensions?).
+On other architectures, a `+cpu` is added to the name (but not tested here).
+
+Edit the `pyproject.toml` to add these blocks:
+
+```toml
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cpu" },
+]
+torchvision = [
+  { index = "pytorch-cpu" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+```
+
+Then add torch and torchvision:
+
+```zsh
+uv add torch torchvision
+```
+
+This will update the `pyproject.toml` file and the `uv.lock` file.
