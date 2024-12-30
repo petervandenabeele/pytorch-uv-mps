@@ -110,7 +110,8 @@ This will update the `pyproject.toml` file and the `uv.lock` file.
 ## Add notebook and main huggingface and StabilityAI related pakcages
 
 Additional packages in pyproject.toml:
-```
+
+```toml
     "ipykernel>=6.29.5",
     "ipywidgets>=8.1.5",
     "diffusers>=0.32.1",
