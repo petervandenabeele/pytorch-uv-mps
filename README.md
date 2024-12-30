@@ -106,3 +106,17 @@ uv add torch torchvision
 ```
 
 This will update the `pyproject.toml` file and the `uv.lock` file.
+
+## Add notebook and main huggingface and StabilityAI related pakcages
+
+Additional packages in pyproject.toml:
+```
+    "ipykernel>=6.29.5",
+    "ipywidgets>=8.1.5",
+    "diffusers>=0.32.1",
+    "transformers>=4.47.1",
+    "accelerate>=1.2.1",
+    "huggingface-hub[cli]>=0.27.0",
+    "protobuf>=5.29.2",
+    "sentencepiece>=0.2.0",
+```
